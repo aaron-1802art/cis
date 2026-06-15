@@ -245,7 +245,7 @@ export function IntelligenceReport({
                 PRIMARY OBSERVATION
               </div>
               <p className="max-w-[1000px] text-[32px] sm:text-[36px] font-serif italic text-[#f5f5f7] leading-[1.4]">
-                "{d.biggestOpportunity?.whyItMatters || "Nike sells identity before products. The website creates aspiration first, then introduces commerce."}"
+                &quot;{d.biggestOpportunity?.whyItMatters || "Nike sells identity before products. The website creates aspiration first, then introduces commerce."}&quot;
               </p>
             </div>
           </TiltCard>

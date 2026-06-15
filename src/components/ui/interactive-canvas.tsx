@@ -180,6 +180,7 @@ export function InteractiveCanvas({ screenshotUrl, playTick, report }: Interacti
             }}
           >
             {/* Screenshot */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={screenshotUrl}
               alt="Dossier audit screenshot"
@@ -288,7 +289,7 @@ export function InteractiveCanvas({ screenshotUrl, playTick, report }: Interacti
                     Copy Recommendation
                   </div>
                   <p className="text-[12px] font-serif text-[#ffefe3]/90 italic">
-                    "{activeAnnotation.details.copyRecommendation}"
+                    &quot;{activeAnnotation.details.copyRecommendation}&quot;
                   </p>
                 </div>
 

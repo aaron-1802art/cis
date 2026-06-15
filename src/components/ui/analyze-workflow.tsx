@@ -51,7 +51,7 @@ export function AnalyzeWorkflow() {
     return () => {
       subscription.unsubscribe();
     };
-  }, []);
+  }, [supabase.auth]);
 
   const handleAnalyze = async () => {
     if (!url) return;

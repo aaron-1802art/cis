@@ -39,7 +39,7 @@ export function AppLayout({ children, hideHeader = false, hideFooter = false }: 
     return () => {
       subscription.unsubscribe();
     };
-  }, []);
+  }, [supabase.auth]);
 
   // Close mobile menu on route change
   useEffect(() => {

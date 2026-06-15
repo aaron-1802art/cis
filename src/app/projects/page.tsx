@@ -76,7 +76,7 @@ export default function ProjectsPage() {
       }
     }
     loadAnalyses();
-  }, []);
+  }, [supabase]);
 
   const toggleBrand = (id: string) => {
     playTick();
