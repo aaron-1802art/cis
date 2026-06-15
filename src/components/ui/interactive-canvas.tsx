@@ -32,10 +32,10 @@ function generateAnnotationsFromReport(report?: BrandIntelligenceReport): Annota
       box: { top: "5%", left: "10%", width: "80%", height: "25%" },
       details: {
         title: "Value Proposition",
-        critique: report.positioning?.uniqueValueProposition || "Hero section lacks a strong unique value proposition.",
+        critique: report.data.biggestOpportunity?.whyItMatters || "Hero section lacks a strong unique value proposition.",
         copyRecommendation: "Refine messaging to focus on core differentiation.",
         codeSnippet: `<h1 className="font-serif tracking-tight text-white/90">
-  ${report.messaging?.taglineOptions?.[0] || "Your compelling headline here."}
+  ${report.data.detailedFindings?.[0]?.recommendation || "Your compelling headline here."}
 </h1>`
       }
     },
@@ -47,10 +47,10 @@ function generateAnnotationsFromReport(report?: BrandIntelligenceReport): Annota
       box: { top: "42%", left: "8%", width: "42%", height: "16%" },
       details: {
         title: "Brand Voice",
-        critique: report.messaging?.toneAndVoice || "Tone and voice are inconsistent across the page.",
+        critique: report.data.detailedFindings?.[0]?.observation || "Tone and voice are inconsistent across the page.",
         copyRecommendation: "Ensure all copy aligns with the desired brand personality.",
         codeSnippet: `<p className="text-[#86868b] leading-relaxed">
-  ${report.messaging?.taglineOptions?.[1] || "Supporting subheadline reinforcing value."}
+  ${report.data.detailedFindings?.[1]?.recommendation || "Supporting subheadline reinforcing value."}
 </p>`
       }
     },
@@ -62,7 +62,7 @@ function generateAnnotationsFromReport(report?: BrandIntelligenceReport): Annota
       box: { top: "70%", left: "45%", width: "48%", height: "22%" },
       details: {
         title: "Conversion Flow",
-        critique: report.uxFrictionPoints?.[0] || "Potential friction points detected in the user journey.",
+        critique: report.data.detailedFindings?.[1]?.observation || "Potential friction points detected in the user journey.",
         copyRecommendation: "Streamline the flow to reduce drop-off.",
         codeSnippet: `<button className="bg-white text-black px-6 py-2.5 rounded-full font-medium">
   [ Primary Call to Action ]
