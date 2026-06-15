@@ -148,7 +148,11 @@ export async function POST(req: Request) {
     console.log("[analyze] Step 4: Generating report with Groq...");
     let reportData = null;
     try {
-      const groqKey = process.env.GROQ_API_KEY || "";
+      let groqKey = process.env.GROQ_API_KEY || "";
+      // Sanitize key in case it was incorrectly set in the environment (e.g. prefix or duplicated)
+      groqKey = groqKey.replace("GROQ_API_KEY=", "").trim();
+      if (groqKey.includes(" ")) groqKey = groqKey.split(" ")[0];
+
       console.log("[analyze] GROQ_API_KEY loaded:", groqKey ? "yes" : "NO - MISSING!");
       if (!groqKey) {
         return NextResponse.json({ error: "GROQ_API_KEY is not configured." }, { status: 500 });
